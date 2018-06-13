@@ -3,6 +3,7 @@ const fs = require('fs')
 const express = require('express')
 const hbs = require('hbs')
 
+const port = process.env.PORT || 3000;
 const app = express()
 
 // to render dynamically and use partials to reuse common html components using handlebars. 
@@ -58,6 +59,6 @@ app.get('/bad', (req, res) => {
   }
   res.send(returnMSg)
 })
-app.listen(3000, () => {
-  console.log('server is up on port 3000')
+app.listen(port, () => {
+  console.log(`server is up on port ${port}`)
 })
